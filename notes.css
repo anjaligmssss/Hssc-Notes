@@ -1,0 +1,154 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #3b82f6; /* blue theme */
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+  color: #cce4ff;
+}
+
+/* Notes Section */
+.notes-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.notes-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #1e293b;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Note Cards */
+/* .note-card {
+  flex: 1 1 250px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+} */
+
+/* Card container (grid) */
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* narrower cards */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Card styling */
+.note-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  max-width: 300px;   /* limit card width on desktop */
+  margin: 0 auto;     /* center align cards */
+}
+
+/* Card image */
+.note-card img {
+  width: 100%;
+  height: 280px;       /* bigger height for better visibility */
+  object-fit: cover;   /* keep proportions, crop edges */
+  border-radius: 8px;
+}
+
+
+/* .note-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+} */
+
+/* .note-card img {
+  width: 100%;
+  height: 200px;  
+  object-fit: cover; 
+  border-radius: 8px;
+} */
+
+.note-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+.pay-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.pay-btn i {
+  margin-right: 6px;
+}
+
+.pay-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+ .note-card {
+  max-width: 100%;  /* use full width on small screens */
+}
+
+.note-card img {
+  height: 200px;   /* slightly smaller height for mobile */
+}
+
+}
+
