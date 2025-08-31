@@ -3,152 +3,175 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: #3b82f6; /* blue theme */
+  padding: 15px 40px;
+  background: #1e3a8a;
   color: white;
 }
 
-.navbar .logo {
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.navbar .nav-links {
+.nav-links {
   list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
+  gap: 20px;
 }
 
-.navbar .nav-links li {
-  margin-left: 20px;
-}
-
-.navbar .nav-links li a {
-  text-decoration: none;
+.nav-links a {
   color: white;
-  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
   transition: color 0.3s;
 }
 
-.navbar .nav-links li a:hover {
-  color: #cce4ff;
+.nav-links a:hover {
+  color: #93c5fd;
 }
 
-/* Notes Section */
-.notes-section {
-  padding: 50px 20px;
+/* Page Heading */
+.notes-header {
   text-align: center;
+  padding: 40px 20px 0px 20px;
+}
+
+.notes-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.notes-header p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* Notes Sections */
+.notes-section {
+  margin: 150px auto;
+  text-align: center;
+  max-width: 1000px;
+  padding: 0 20px;
 }
 
 .notes-section h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #1e293b;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1e3a8a;
 }
 
-/* Cards Container */
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Note Cards */
-/* .note-card {
-  flex: 1 1 250px;
-  background: #f9fafb;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+/* Offer Box */
+.offer-box {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
   padding: 15px;
-  text-align: center;
-  transition: transform 0.3s;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.note-card:hover {
-  transform: translateY(-5px);
-} */
+.offer-box .price {
+  font-size: 1.5rem;
+  color: #fbbf24;
+  margin: 0 5px;
+}
 
-/* Card container (grid) */
-.notes-container {
+.offer-box .cut {
+  text-decoration: line-through;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  margin-left: 8px;
+}
+
+
+
+/* Notes Gallery */
+
+.notes-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* narrower cards */
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-/* Card styling */
-.note-card {
+.notes-gallery img {
+  width: 100%;
+  height: auto;              /* keeps natural proportion */
+  object-fit: contain;       /* no cropping */
+  border-radius: 8px;
+  border: 1px solid #ccc;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 15px;
-  text-align: center;
-  max-width: 300px;   /* limit card width on desktop */
-  margin: 0 auto;     /* center align cards */
+  display: block;            /* remove inline gap */
 }
 
-/* Card image */
-.note-card img {
-  width: 100%;
-  height: 280px;       /* bigger height for better visibility */
-  object-fit: cover;   /* keep proportions, crop edges */
-  border-radius: 8px;
+@media (max-width: 600px) {
+  .notes-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns only */
+    gap: 10px;
+  }
+
+  .notes-gallery img {
+    max-height: 180px;  /* smaller height so no extra blank space */
+  }
+}
+
+@media (min-width: 1024px) {
+  .notes-gallery img {
+    max-height: 220px;  /* control big scaling */
+  }
 }
 
 
-/* .note-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-} */
+.notes-gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
 
-/* .note-card img {
-  width: 100%;
-  height: 200px;  
-  object-fit: cover; 
-  border-radius: 8px;
-} */
 
-.note-card p {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: #374151;
+/* Responsive fix for phones */
+@media (max-width: 600px) {
+  .notes-gallery img {
+    height: 300px; /* taller images for phone screens */
+  }
+}
+
+
+/* Price Box */
+.price-box {
+  margin-top: 10px;
 }
 
 .pay-btn {
-  display: inline-block;
-  padding: 8px 15px;
-  background: #3b82f6;
+  padding: 12px 30px;
+  background: #f59e0b;
   color: white;
-  border-radius: 8px;
-  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
   font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.pay-btn i {
-  margin-right: 6px;
+  transition: 0.3s;
 }
 
 .pay-btn:hover {
-  background: #2563eb;
+  background: #d97706;
   transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
- .note-card {
-  max-width: 100%;  /* use full width on small screens */
+
+
+/* Footer */
+.footer {
+  background: #1e3a8a;
+  padding: 20px;
+  text-align: center;
+  color: white;
 }
 
-.note-card img {
-  height: 200px;   /* slightly smaller height for mobile */
-}
-
+.footer-bottom {
+  font-size: 0.9rem;
 }
 
